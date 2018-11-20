@@ -67,9 +67,9 @@ public class Guesser{
     private String getReply(){
         String reply = "";
         while
-        (!reply.equals("F") || !reply.equals("T")) {
+        (!reply.equals("F") && !reply.equals("T")) {
             System.out.println("Please enter T for true, F for false.");
-            reply = sc.nextLine();
+            reply = sc.next();
         }
 
         return reply;
