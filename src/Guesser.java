@@ -24,6 +24,14 @@ public class Guesser{
 
     // Write the constructor below this line.
 
+    public Guesser(int low, int high) {
+        if (low < high && low >= 0 && high <= 1000) {
+            this.low = low;
+            this.high = high;
+        } else throw new IllegalArgumentException("Invalid values. ");
+    }
+
+
 
     /*
      * Task 2. Complete the start() method, so that
@@ -32,7 +40,9 @@ public class Guesser{
      */
     public void start(){
         // call the rules method here
+        rules();
         // call the doGuesses() method here
+        doGuesses();
     }
 
     private void rules(){
@@ -55,6 +65,8 @@ public class Guesser{
      */
     private String getReply(){
         String reply = null;
+
+
         // Write code here which reads a String from the console.
         // As long as it is not a valid reply (one of "T" and "F")
         // write an error message, and read a new reply.
