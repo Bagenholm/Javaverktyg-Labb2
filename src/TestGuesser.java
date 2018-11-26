@@ -1,30 +1,35 @@
-public class TestGuesser {
-
-    public static void main(String[] args) {
-        Guesser p1 = new Guesser(0, 1000);
-
-        if (p1.toString().equals("low: 0 high: 1000")) {
-            System.out.println("Test with 0, 1000 passed!");
-        } else {
-            System.err.println("Test with 0, 1000 failed!");
-        }
-
-        Guesser p2 = new Guesser(0,1);
-
-        if (p2.toString().equals("low: 0 high: 1")) {
-            System.out.println("Test with 0, 1 passed!");
-        } else {
-            System.err.println("Test with 0, 1 failed!");
-        }
-
-        Guesser p3 = new Guesser(100, 101);
-
-        if (p3.toString().equals("low: 100 high: 101")) {
-            System.out.println("Test with 0, 101 passed!");
-        } else {
-            System.err.println("Test with 0, 101 failed!");
-        }
-
-        Guesser p4 = new Guesser(-5, 20);
+public class TestGuesser{
+    private static boolean isToStringOverridden(){
+        return ! new Guesser(0,1).toString().startsWith("Guesser@");
     }
+    private static boolean testConstructor(int low, int high){
+        return new Guesser(low, high).toString().equals("low: " +
+                low +
+                " high: " +
+                high);
+    }
+    private static void printToStringError(){
+        System.err.println("You must override toString() in Guesser.");
+        System.out.println("public String toString(){");
+        System.out.println("  return \"low: \" + low + \" high: \" + high;");
+        System.out.println("}");
+    }
+
+    public static void main(String[] args){
+
+        if(!isToStringOverridden()){
+            printToStringError();
+            System.exit(1);
+        }
+
+        int low=0;
+        int high;
+        System.out.println("Running tests...");
+        for(high=1;high < 1000000; high *=10){
+            System.out.print("Guesser("+low+", "+high+"): ");
+            System.out.println(testConstructor(low,high)?"Pass!":"Fail!");
+        }
+
+    }
+
 }

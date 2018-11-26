@@ -27,7 +27,7 @@ public class Guesser{
     // Write the constructor below this line.
 
     public Guesser(int low, int high) {
-        if (low < high && low >= 0 && high <= 1000) {
+        if (low < high && low >= 0 && high <= 100000) {
             this.low = low;
             this.high = high;
         } else throw new IllegalArgumentException("Invalid values. ");
