@@ -1,0 +1,81 @@
+Siktar på VG :)
+
+● Du ska skicka in en länk till ditt repo på github.Till exempel i en text-fil med länken.
+    https://github.com/Bagenholm/Javaverktyg-Labb2
+
+● Du ska skicka in en textfil där du svara på följande frågor:
+○ När använder man add respektive commit?
+    git add lägger till filen i staging area, vilket krävs innan man gör en commit. Filer som inte har lags till med add ingår inte i commit.
+    git commit skapar en ny revision av projektet från de filer som ligger i staging area.
+
+○ Vad är pull repektive push?
+    git pull är när man hämtar version från ett remote repository.
+    git push är när man lägger upp sin commit på ett remote repository som ny version.
+
+○ När använder man log respektive status?
+    git log visar ändringar i repository med commit message och SHA, vilket är bra att veta om man vill använda en tidigare version.
+    git status visar vilken branch man står i, om den branchen ligger efter eller remote repository, vad som ligger added och vilka filer som ändringar gjorts i.
+
+○ Hur kan man formulera sig i sina commit-meddelanden?
+    Kort, enkelt, beskrivande, tempus presens.
+
+● Förklara hur du skulle kunna backa till en viss version av din kod.
+    git checkout SHA hämtar version från en specifik commit.
+
+● Det finns flera sätt att rulla tillbaka koden till ett tidigare tillstånd. Förklara skillnaden och
+motivera när man skulle använda den ena eller andra metoden. Ge gärna exempel på
+de kommandon du använder för att göra detta och vissa att det fungerar, vilken output
+du fick från git-kommandona eller din IDE.
+    - git checkout kan rulla tillbaka genom att hämta en specifik version av koden. Går att göra på enstaka filer eller på hela projektet. Flyttar inte pointern.
+    - git revert gör en ny commit från den punkt du angett. Den rullar alltså tillbaka koden, men du får en log som visar vad som hänt och det går att följa de "dåliga" ändringarna du rullade tillbaka också.
+    - git reset rullar tillbaka genom att ta återställa till en tidigare commit och samtidigt ta bort historiken efter den angivna punkten. De ångrade ändringarna försvinner från git log.
+
+git log:
+
+Patrik@DESKTOP-2P42BFQ /cygdrive/c/users/patrik/documents/Inlämningsuppgift2
+$ git log
+commit 56bb80f1a4af945afdd17f8d92d8629920c74dd6 (HEAD -> master, origin/master)
+Author: Patrik <bagenholm.patrik@hotmail.com>
+Date:   Mon Nov 26 13:05:43 2018 +0100
+
+    Change test for guesser
+
+commit 55d0182cd0e2c50a7e7174ac48f99d118613f5fb
+Author: Patrik <bagenholm.patrik@hotmail.com>
+Date:   Mon Nov 26 09:20:56 2018 +0100
+
+    Add test for guesser constructor
+
+commit 832afdb4ff440f64e2ece64b09ec4b7c41b0e1f8
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 11:43:30 2018 +0000
+
+    Add option for variable game limits.
+
+commit cc184bfe40f6f9673347e12f3078b988ad70bb25
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 11:29:01 2018 +0000
+
+    Add getReply() method for taking user input
+
+commit 04a169c5a488afa6bfc19ffbf8dfa359dfd4b3cc
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 11:10:46 2018 +0000
+
+    Add constructor
+
+commit a86fc4155e18b4be9be7bd7eaa923411d37a35c8
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 10:50:45 2018 +0000
+
+    Add Guesser.java
+
+commit 2b66ba62affe87648b7ebf85fdc3ce2cc9603405
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 10:47:55 2018 +0000
+
+    First commit, project start Guesser.
+
+git checkout cc184bf  <-- hade hämtat den commit som heter Add getReply() method for taking user input.
+git reset cc184bf <-- hade hämtat commit, sen "tagit bort" de som kommer efter.
+git revert cc184bf <-- hade skapat en ny commit i git log, men återställt koden till hur den var som om man gjort en checkout.

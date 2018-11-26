@@ -1,0 +1,43 @@
+Patrik@DESKTOP-2P42BFQ /cygdrive/c/users/patrik/documents/Inlämningsuppgift2
+$ git log
+commit 56bb80f1a4af945afdd17f8d92d8629920c74dd6 (HEAD -> master, origin/master)
+Author: Patrik <bagenholm.patrik@hotmail.com>
+Date:   Mon Nov 26 13:05:43 2018 +0100
+
+    Change test for guesser
+
+commit 55d0182cd0e2c50a7e7174ac48f99d118613f5fb
+Author: Patrik <bagenholm.patrik@hotmail.com>
+Date:   Mon Nov 26 09:20:56 2018 +0100
+
+    Add test for guesser constructor
+
+commit 832afdb4ff440f64e2ece64b09ec4b7c41b0e1f8
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 11:43:30 2018 +0000
+
+    Add option for variable game limits.
+
+commit cc184bfe40f6f9673347e12f3078b988ad70bb25
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 11:29:01 2018 +0000
+
+    Add getReply() method for taking user input
+
+commit 04a169c5a488afa6bfc19ffbf8dfa359dfd4b3cc
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 11:10:46 2018 +0000
+
+    Add constructor
+
+commit a86fc4155e18b4be9be7bd7eaa923411d37a35c8
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 10:50:45 2018 +0000
+
+    Add Guesser.java
+
+commit 2b66ba62affe87648b7ebf85fdc3ce2cc9603405
+Author: Patrik <bagenholm.patrik@gmail.com>
+Date:   Tue Nov 20 10:47:55 2018 +0000
+
+    First commit, project start Guesser.

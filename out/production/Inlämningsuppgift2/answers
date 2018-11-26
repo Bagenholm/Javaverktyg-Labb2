@@ -1,0 +1,35 @@
+● Du ska skicka in en länk till ditt repo på github.Till exempel i en text-fil med länken.
+    https://github.com/Bagenholm/Javaverktyg-Labb2
+
+● Du ska skicka in en textfil där du svara på följande frågor:
+○ När använder man add respektive commit?
+    git add lägger till filen i staging area, vilket krävs innan man gör en commit. Filer som inte har lags till med add ingår inte i commit.
+    git commit skapar en ny revision av projektet från de filer som ligger i staging area.
+
+○ Vad är pull repektive push?
+    git pull är när man hämtar version från ett remote repository.
+    git push är när man lägger upp sin commit på ett remote repository som ny version.
+
+○ När använder man log respektive status?
+    git log visar ändringar i repository med commit message och SHA, vilket är bra att veta om man vill använda en tidigare version.
+    git status visar vilken branch man står i, om den branchen ligger efter eller remote repository, vad som ligger added och vilka filer som ändringar gjorts i.
+
+○ Hur kan man formulera sig i sina commit-meddelanden?
+    Kort, enkelt, beskrivande, tempus presens.
+
+● Förklara hur du skulle kunna backa till en viss version av din kod.
+    git checkout SHA hämtar version från en specifik commit.
+
+● Det finns flera sätt att rulla tillbaka koden till ett tidigare tillstånd. Förklara skillnaden och
+motivera när man skulle använda den ena eller andra metoden. Ge gärna exempel på
+de kommandon du använder för att göra detta och vissa att det fungerar, vilken output
+du fick från git-kommandona eller din IDE.
+    - git checkout ???
+        Checkout rullar tillbaka genom att hämta en tidigare version av koden.
+        --file rullar tillbaka genom att hämta en tidigare version av den specificerade filen.
+        commit rullar tillbaka genom att hämta en tidigare version av projektet.
+
+    - git reset ???
+        Reset rullar tillbaka genom att flytta pointern tillbaka till en tidigare version, d. v. s. lokalt repo, staging och working areas, för det som angetts.
+        -file rullar tillbaka den lokala koden för en fil.
+        SHA rullar tillbaka den lokala koden för hela projektet till den angivna versionen.
